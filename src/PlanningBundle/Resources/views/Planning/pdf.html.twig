@@ -1,0 +1,80 @@
+{% block body %}
+
+    <div  style="margin-left: 350px ; color: #fa89be" >
+        <h1>PLanning</h1>
+    </div>
+    <br>
+    <br>
+    <br>
+        {% for i in planning %}
+
+        <div class="col-sm-4">
+            <label> Class :</label>
+            <input value="{{ i.niveau }}">
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <thead >
+            <div   class="table-responsive">
+        <table style="color: #353535" border="10" cellspacing="15" cellpadding="15">
+        <tr bgcolor="#dcdcdc">
+            <th style="color: #fd2a5d" scope="col">Time/Day</th>
+            <th style="color: cornflowerblue" scope="col">Monday</th>
+            <th style="color: cornflowerblue" scope="col">Tuesday</th>
+            <th style="color: cornflowerblue" scope="col">Wednesday</th>
+            <th style="color: cornflowerblue" scope="col">Thursday</th>
+            <th style="color: cornflowerblue" scope="col">Friday</th>
+            <th style="color: cornflowerblue" scope="col">Saturday</th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+        <!--------08:00 - 10:00-------->
+        <tr>
+            <th style="color: cornflowerblue" scope="col">08:00--10:00</th>
+            <td>{{ i.matiere1 }}</td>
+            <td>{{ i.matiere2 }}</td>
+            <td>{{ i.matiere3 }}</td>
+            <td>{{ i.matiere4 }}</td>
+            <td>{{ i.matiere5 }}</td>
+            <td>{{ i.activite1 }}</td>
+        </tr>
+        <!-------10:00 - 12:00--------->
+        <tr>
+            <th style="color: cornflowerblue" scope="col">10:00--12:00</th>
+            <td>{{ i.matiere6 }}</td>
+            <td>{{ i.matiere7 }}</td>
+            <td>{{ i.activite2 }}</td>
+            <td>{{ i.matiere8 }}</td>
+            <td>{{ i.matiere9 }}</td>
+            <td>{{ i.activite3 }}</td>
+        </tr>
+        <!-------12:00 - 14:00--------->
+        <tr>
+            <th style="color: cornflowerblue" scope="col">12:00--14:00</th>
+            <td>pause dejeuner</td>
+            <td>pause dejeuner</td>
+            <td></td>
+            <td>pause dejeuner</td>
+            <td>pause dejeuner</td>
+            <td></td>
+        </tr>
+        <!-------14:00 - 16:00--------->
+        <tr>
+            <th style="color: cornflowerblue" scope="col">14:00--16:00</th>
+            <td>{{ i.activite4 }}</td>
+            <td>{{ i.activite5 }}</td>
+            <td></td>
+            <td>{{ i.activite6 }}</td>
+            <td>{{ i.activite7 }}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

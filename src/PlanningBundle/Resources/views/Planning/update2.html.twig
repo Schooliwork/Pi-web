@@ -1,0 +1,442 @@
+{% extends 'base2.html.twig' %}
+
+{% block header %}
+
+<body>
+
+<!-- start loader -->
+<div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner"><div class="loader"></div></div></div></div>
+<!-- end loader -->
+
+<!-- Start wrapper-->
+<div id="wrapper">
+
+    <!--Start sidebar-wrapper-->
+    <div id="sidebar-wrapper" class="bg-theme bg-theme2" data-simplebar="" data-simplebar-auto-hide="true">
+        <div class="brand-logo">
+            <a href="{{ asset ('index.html"')}}>
+                <img src="{{ asset ('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+            <h5 class="logo-text">Schooli</h5>
+            </a>
+        </div>
+
+        <div class="user-details">
+            <div class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#user-dropdown">
+                <div class="avatar"><img class="mr-3 side-user-img" src="{{ asset ('assets/images/avatars/avatar-13.png')}}" alt="user avatar"></div>
+                <div class="media-body">
+                    <h6 class="side-user-name">Admin</h6>
+                </div>
+            </div>
+            <div id="user-dropdown" class="collapse">
+                <ul class="user-setting-menu">
+                    <li><a href="{{ path ('fos_user_security_logout')}}"><i class="icon-power"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="sidebar-menu do-nicescrol">
+            <li class="sidebar-header">MAIN NAVIGATION</li>
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Events</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('event_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Event</a></li>
+                    <li><a href="{{ path ('event_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Event</a></li>
+                    <li><a href="{{ path ('event_statistique')}}"><i class="zmdi zmdi-long-arrow-right"></i>Statics</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Planning</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('planning_read2')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Planning</a></li>
+                    <li><a href="{{ path ('planning_create2')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Planning</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Reclamation</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('reclamation_affiche')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Reclamation</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Meeting</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('meeting_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Meeting</a></li>
+                    <li><a href="{{ path ('meeting_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Meeting</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Mail</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('mail_sendMail')}}"><i class="zmdi zmdi-long-arrow-right"></i>Send Mail</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Courses</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('matiere_index')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Courses</a></li>
+                    <li><a href="{{ path ('matiere_new')}}"><i class="zmdi zmdi-long-arrow-right"></i>Upload Courses</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Wall</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('wall_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>Liste Posts</a></li>
+                    <li><a href="{{ path ('wall_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Post</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Quiz</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()') }}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Activity</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('activite_index') }}"><i class="zmdi zmdi-long-arrow-right"></i>List Activite</a></li>
+                    <li><a href="{{ path ('activite_new') }}"><i class="zmdi zmdi-long-arrow-right"></i>Create Activite</a></li>
+                </ul>
+            </li>
+
+
+        </ul>
+
+    </div>
+    <!--End sidebar-wrapper-->
+
+    <!--Start Back To Top Button-->
+    <a href="{{ asset ('javaScript:void()')}}" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+{% block container %}
+    {% if pl is defined %}
+            <form action="{{ path('planning_update2', {'id' : pl.id}) }}" method="POST" >
+                <div class="content-wrapper">
+                    <div class="container-fluid">
+                        <div  class="card">
+                            <div class="card-body">
+                                <p><a  href="{{ path ('planning_read2')}}" class="btn btn-dark">BACK</a></p>
+                                <h4 style="margin-left: 300px" class="col-sm-8">Update Planning</h4>
+<hr>
+                                    <br>
+                                    <br>
+                        <div style="margin-left: 100px;" class="col-md-9">
+                            <div  class="contact-form">
+                                <!-----niveau----->
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3"><label>Class</label>
+                                        <select type="text" name="niveau"  value="{{ pl.niveau }}">
+                                            <option value="1ére">1er</option>
+                                            <option value="2éme">2eme</option>
+                                            <option value="3éme">3eme</option>
+                                            <option value="4éme">4eme</option>
+                                            <option value="5éme">5eme</option>
+                                            <option value="6éme">6eme</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-----matiere1----->
+                                <h4>08:00---10:00</h4>
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Monday : Lesson 1</label>
+                                        <select type="text" name="matiere1"  value="{{ pl.matiere1 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                <!-----matiere2----->
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Tuesday : Lesson 2</label>
+                                        <select type="text" name="matiere2"  value="{{ pl.matiere2 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                <!-----matiere3----->
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Wednesday : Lesson 3</label>
+                                        <select type="text" name="matiere3"  value="{{ pl.matiere3 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-----matiere4----->
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Thursday : Lesson 4</label>
+                                        <select type="text" name="matiere4"  value="{{ pl.matiere4 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                <!-----matiere5----->
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Friday : Lesson 5</label>
+                                        <select type="text" name="matiere5"  value="{{ pl.matiere5 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                <!-----activite1----->
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationServer013">Saturday : Activity 1</label>
+                                        <select type="text" name="activite1" value="{{ pl.activite1 }}"  >
+                                        <option value="Tennis">Tennis</option>
+                                        <option value="Sport">Sport</option>
+                                        <option value="Dance">Dance</option>
+                                        <option value="Natation">Natation</option>
+                                        <option value="Musique">Musique</option>
+                                        <option value="Theatre">Theatre</option>
+                                        <option value="Calcul Mental">Calcul Mental</option>
+                                        <option value="Dessin">Dessin</option>
+                                        <option value="Basket">Basket</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-----matiere6----->
+                                <h4>10:00---12:00</h4>
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Monday : Lesson 6</label>
+                                        <select type="text" name="matiere6"  value="{{ pl.matiere6 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                <!-----matiere7----->
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Tuesday : Lesson 7</label>
+                                        <select type="text" name="matiere7"  value="{{ pl.matiere7 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                <!-----activite2----->
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Wednesday : Activity 2</label>
+                                            <select type="text" name="activite2" value="{{ pl.activite2 }}">
+                                            <option value="Tennis">Tennis</option>
+                                            <option value="Sport">Sport</option>
+                                            <option value="Dance">Dance</option>
+                                            <option value="Natation">Natation</option>
+                                            <option value="Musique">Musique</option>
+                                            <option value="Theatre">Theatre</option>
+                                            <option value="Calcul Mental">Calcul Mental</option>
+                                            <option value="Dessin">Dessin</option>
+                                            <option value="Basket">Basket</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <!-----matiere8----->
+                                <div  class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Thursday : Lesson 8</label>
+                                        <select type="text" name="matiere8"  value="{{ pl.matiere8 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                <!-----matiere9----->
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Friday : Lesson 9</label>
+                                        <select type="text" name="matiere9"  value="{{ pl.matiere9 }}">
+                                            <option value="Mathematique">Mathematique</option>
+                                            <option value="Physique">Physique</option>
+                                            <option value="Lecture">Lecture</option>
+                                            <option value="Expression écrite">Expression ecrite</option>
+                                            <option value="Français">Francais</option>
+                                            <option value="Arabe">Arabe</option>
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Histoire et Géographie">Histoire et Geographie</option>
+                                            <option value="Informatique">Informatique</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                <!-----activite3----->
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationServer013">Saturday : Activity 3</label>
+                                        <select type="text" name="activite3" value="{{ pl.activite3 }}">
+                                            <option value="Tennis">Tennis</option>
+                                            <option value="Sport">Sport</option>
+                                            <option value="Dance">Dance</option>
+                                            <option value="Natation">Natation</option>
+                                            <option value="Musique">Musique</option>
+                                            <option value="Theatre">Theatre</option>
+                                            <option value="Calcul Mental">Calcul Mental</option>
+                                            <option value="Dessin">Dessin</option>
+                                            <option value="Basket">Basket</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <!-----activite4----->
+                                    <h4>14:00---16:00</h4>
+                                    <div  class="form-row">
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationServer013">Monday : Activity 4</label>
+                                        <select type="text" name="activite4" value="{{ pl.activite4 }}">
+                                                <option value="Tennis">Tennis</option>
+                                                <option value="Sport">Sport</option>
+                                                <option value="Dance">Dance</option>
+                                                <option value="Natation">Natation</option>
+                                                <option value="Musique">Musique</option>
+                                                <option value="Theatre">Theatre</option>
+                                                <option value="Calcul Mental">Calcul Mental</option>
+                                                <option value="Dessin">Dessin</option>
+                                                <option value="Basket">Basket</option>
+                                                </select>
+                                         </div>
+                                <!-----activite5----->
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationServer013">Tuesday : Activity 5</label>
+                                        <select type="text" name="activite5" value="{{ pl.activite5 }}">
+                                                <option value="Tennis">Tennis</option>
+                                                <option value="Sport">Sport</option>
+                                                <option value="Dance">Dance</option>
+                                                <option value="Natation">Natation</option>
+                                                <option value="Musique">Musique</option>
+                                                <option value="Theatre">Theatre</option>
+                                                <option value="Calcul Mental">Calcul Mental</option>
+                                                <option value="Dessin">Dessin</option>
+                                                <option value="Basket">Basket</option>
+                                                </select>
+                                        </div>
+                                <!-----activite6----->
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationServer013">Thursday : Activity 6</label>
+                                        <select type="text" name="activite6" value="{{ pl.activite6 }}">
+                                                <option value="Tennis">Tennis</option>
+                                                <option value="Sport">Sport</option>
+                                                <option value="Dance">Dance</option>
+                                                <option value="Natation">Natation</option>
+                                                <option value="Musique">Musique</option>
+                                                <option value="Theatre">Theatre</option>
+                                                <option value="Calcul Mental">Calcul Mental</option>
+                                                <option value="Dessin">Dessin</option>
+                                                <option value="Basket">Basket</option>
+                                                </select>
+                                         </div>
+                                <!-----activite7----->
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validationServer013">Friday : Activity 7</label>
+                                        <select type="text" name="activite7" value="{{ pl.activite7 }}">
+                                                <option value="Tennis">Tennis</option>
+                                                <option value="Sport">Sport</option>
+                                                <option value="Dance">Dance</option>
+                                                <option value="Natation">Natation</option>
+                                                <option value="Musique">Musique</option>
+                                                <option value="Theatre">Theatre</option>
+                                                <option value="Calcul Mental">Calcul Mental</option>
+                                                <option value="Dessin">Dessin</option>
+                                                <option value="Basket">Basket</option>
+                                                </select>
+                                          </div>
+                                </div>
+                                <!-----modifier----->
+<br>
+                                    <div class="form-group row">
+                                        <div class="col-md-6 mr-auto">
+                                        <input style="margin-left: 200px" href="{{ path('planning_update2', { 'id': pl.id} ) }}"  type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Save">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}
+{% endblock %}

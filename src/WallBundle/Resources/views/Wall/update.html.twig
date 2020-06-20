@@ -1,0 +1,180 @@
+{% extends 'base2.html.twig' %}
+
+{% block header %}
+
+<body>
+
+<!-- start loader -->
+<div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner"><div class="loader"></div></div></div></div>
+<!-- end loader -->
+
+<!-- Start wrapper-->
+<div id="wrapper">
+
+    <!--Start sidebar-wrapper-->
+    <div id="sidebar-wrapper" class="bg-theme bg-theme2" data-simplebar="" data-simplebar-auto-hide="true">
+        <div class="brand-logo">
+            <a href="{{ asset ('index.html"')}}>
+                <img src="{{ asset ('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+            <h5 class="logo-text">Schooli</h5>
+            </a>
+        </div>
+
+        <div class="user-details">
+            <div class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#user-dropdown">
+                <div class="avatar"><img class="mr-3 side-user-img" src="{{ asset ('assets/images/avatars/avatar-13.png')}}" alt="user avatar"></div>
+                <div class="media-body">
+                    <h6 class="side-user-name">Admin</h6>
+                </div>
+            </div>
+            <div id="user-dropdown" class="collapse">
+                <ul class="user-setting-menu">
+                    <li><a href="{{ path ('fos_user_security_logout')}}"><i class="icon-power"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="sidebar-menu do-nicescrol">
+            <li class="sidebar-header">MAIN NAVIGATION</li>
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Events</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('event_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Event</a></li>
+                    <li><a href="{{ path ('event_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Event</a></li>
+                    <li><a href="{{ path ('event_statistique')}}"><i class="zmdi zmdi-long-arrow-right"></i>Statics</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Planning</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('planning_read2')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Planning</a></li>
+                    <li><a href="{{ path ('planning_create2')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Planning</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Reclamation</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('reclamation_affiche')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Reclamation</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Meeting</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('meeting_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Meeting</a></li>
+                    <li><a href="{{ path ('meeting_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Meeting</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Mail</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('mail_sendMail')}}"><i class="zmdi zmdi-long-arrow-right"></i>Send Mail</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Courses</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('matiere_index')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Courses</a></li>
+                    <li><a href="{{ path ('matiere_new')}}"><i class="zmdi zmdi-long-arrow-right"></i>Upload Courses</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Wall</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('wall_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>Liste Posts</a></li>
+                    <li><a href="{{ path ('wall_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Post</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Quiz</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()') }}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Activity</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('activite_index') }}"><i class="zmdi zmdi-long-arrow-right"></i>List Activite</a></li>
+                    <li><a href="{{ path ('activite_new') }}"><i class="zmdi zmdi-long-arrow-right"></i>Create Activite</a></li>
+                </ul>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+        {% if walls is defined %}
+
+                <form action="{{ path('wall_update', {'id' : walls.id}) }}" method="POST" >
+                    <div class="content-wrapper">
+                        <div class="container-fluid">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p><a  href="{{ path ('wall_read')}}" class="btn btn-dark">BACK</a></p>
+
+                                    <h4 style="margin-left: 300px" class="col-sm-8">Update Wall</h4>
+                                    <hr>
+<br>
+<br>
+                                    <div class="form-group row">
+                                        <label for="input-26" class="col-sm-2 col-form-label">Title</label>
+                                        <div class="col-sm-10">
+                                            <input type="text"  value="{{ walls.contenu }}"  >
+                                         </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="input-27" class="col-sm-2 col-form-label">Image</label>
+                                        <div class="col-sm-10">
+                                            <input type="file"  value="{{ walls.image }}"  >
+                                        </div>
+                                    </div>
+                                    <!-----modifier----->
+                                    <br>
+                                    <br>
+                                    <div style="margin-left: 250px" class="form-row">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-10">
+                                            <input href="{{ path('wall_update' , { 'id': walls.id} ) }}"  type="submit" class="btn btn-primary btn-round px-5" value="Save">
+                                         </div>
+                                    </div>
+
+                                    </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                </form>
+        {% endif %}
+</div>
+    {% endblock %}
+

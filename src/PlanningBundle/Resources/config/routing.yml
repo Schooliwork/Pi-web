@@ -1,0 +1,44 @@
+planning_homepage:
+    path:     /
+    defaults: { _controller: PlanningBundle:Default:index }
+
+planning_create2:
+    path:     /create2
+    defaults: { _controller: PlanningBundle:Planning:create2 }
+
+planning_read2:
+    path:     /read2
+    defaults: { _controller: PlanningBundle:Planning:read2 }
+
+planning_update2:
+    path:     /update2/{id}
+    defaults: { _controller: PlanningBundle:Planning:update2 }
+
+planning_delete2:
+    path:     /delete2/{id}
+    defaults: { _controller: PlanningBundle:Planning:delete2 }
+
+planning_affiche2:
+    path:     /affiche2
+    defaults: { _controller: PlanningBundle:upload:affiche2 }
+
+planning_pdf:
+    path:     /pdf/{id}
+    defaults: { _controller: PlanningBundle:Planning:pdf }
+
+upload_show:
+    path:     /show
+    defaults: { _controller: PlanningBundle:upload:show }
+
+upload_new1:
+    path:     /new1
+    defaults: { _controller: PlanningBundle:upload:new1 }
+
+upload_delete:
+    path:     /delete/{id}
+    defaults: { _controller: PlanningBundle:upload:delete }
+
+api_allu:
+    path:     /allu
+    defaults: { _controller: PlanningBundle:Api:allu}
+

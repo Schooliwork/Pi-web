@@ -1,0 +1,70 @@
+{% extends 'MailBundle:Default:index.html.twig' %}
+{% block body %}
+    {%  set flashbag_notices = app.session.flashbag.get('notice') %}
+    {% if flashbag_notices is not empty %}
+        <ul class="msg">
+            {% for notice in flashbag_notices %}
+                <li>{{ notice }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="container-contact100" style="background-color: lightcoral">
+
+    <p><a  style="margin-right: 1130px" href="{{ path ('admins_page')}}" class="btn btn-dark">BACK</a></p>
+    <div class="container-contact100" style="background-color: lightcoral">
+    <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+
+    <button class="contact100-btn-show">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+    </button>
+
+    <div class="wrap-contact100">
+    <button class="contact100-btn-hide">
+        <i class="fa fa-close" aria-hidden="true"></i>
+    </button>
+     <div style="margin-left: 200px">
+    <div class="navbar navbar-inverse" style="margin-left: -250px" >
+        <div class="navbar-brand contact100-form-title">
+     Planify A Meeting
+        </div>
+    </div>
+    <div class="wrap-input100 rs1-wrap-input100 validate-input" >
+        <span class="label-input100"></span>
+        <input class="input100" >
+        <span class="focus-input100"></span>
+
+    <div class="container" style="margin-left: -100px">
+    {{ form_start(f) }}
+
+        <div class="form-group" >
+            <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                {{ form_row(f.subject) }}
+                <span class="focus-input100"></span>
+            </div>
+        </div>
+
+              <div class="form-group">
+                  <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Subject is required">
+                     {{ form_row(f.mail) }}
+                      <span class="focus-input100"></span>
+              </div>
+
+                     <div class="form-group">
+                         <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Message is required">
+                       {{ form_row(f.object) }}
+                             <span class="focus-input100"></span>
+                     </div>
+
+
+    <table>
+        <tr>
+            <td><input type="submit" value="Envoyer" style="margin-left: 70px" class="contact100-form-btn"></td>
+        </tr>
+    </table>
+    {{ form_end(f) }}
+
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

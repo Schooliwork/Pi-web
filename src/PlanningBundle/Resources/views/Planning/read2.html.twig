@@ -1,0 +1,251 @@
+{% extends 'base2.html.twig' %}
+
+{% block header %}
+
+<body>
+
+<!-- start loader -->
+<div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner"><div class="loader"></div></div></div></div>
+<!-- end loader -->
+
+<!-- Start wrapper-->
+<div id="wrapper">
+
+    <!--Start sidebar-wrapper-->
+    <div id="sidebar-wrapper" class="bg-theme bg-theme2" data-simplebar="" data-simplebar-auto-hide="true">
+        <div class="brand-logo">
+            <a href="{{ asset ('index.html"')}}>
+                <img src="{{ asset ('assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+            <h5 class="logo-text">Schooli</h5>
+            </a>
+        </div>
+
+        <div class="user-details">
+            <div class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#user-dropdown">
+                <div class="avatar"><img class="mr-3 side-user-img" src="{{ asset ('assets/images/avatars/avatar-13.png')}}" alt="user avatar"></div>
+                <div class="media-body">
+                    <h6 class="side-user-name">Admin</h6>
+                </div>
+            </div>
+            <div id="user-dropdown" class="collapse">
+                <ul class="user-setting-menu">
+                    <li><a href="{{ path ('fos_user_security_logout')}}"><i class="icon-power"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="sidebar-menu do-nicescrol">
+            <li class="sidebar-header">MAIN NAVIGATION</li>
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Events</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('event_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Event</a></li>
+                    <li><a href="{{ path ('event_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Event</a></li>
+                    <li><a href="{{ path ('event_statistique')}}"><i class="zmdi zmdi-long-arrow-right"></i>Statics</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Planning</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('planning_read2')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Planning</a></li>
+                    <li><a href="{{ path ('planning_create2')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Planning</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Reclamation</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('reclamation_affiche')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Reclamation</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Meeting</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('meeting_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Meeting</a></li>
+                    <li><a href="{{ path ('meeting_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Meeting</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Mail</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('mail_sendMail')}}"><i class="zmdi zmdi-long-arrow-right"></i>Send Mail</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Courses</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('matiere_index')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Courses</a></li>
+                    <li><a href="{{ path ('matiere_new')}}"><i class="zmdi zmdi-long-arrow-right"></i>Upload Courses</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Wall</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('wall_read')}}"><i class="zmdi zmdi-long-arrow-right"></i>Liste Posts</a></li>
+                    <li><a href="{{ path ('wall_create')}}"><i class="zmdi zmdi-long-arrow-right"></i>Create Post</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()')}}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Quiz</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ asset ('javaScript:void()') }}" class="waves-effect">
+                    <i class="zmdi zmdi-view-dashboard"></i> <span>Activity</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="{{ path ('activite_index') }}"><i class="zmdi zmdi-long-arrow-right"></i>List Activite</a></li>
+                    <li><a href="{{ path ('activite_new') }}"><i class="zmdi zmdi-long-arrow-right"></i>Create Activite</a></li>
+                </ul>
+            </li>
+
+
+        </ul>
+
+    </div>
+    <!--End sidebar-wrapper-->
+    {% if plann == NULL %}
+    <h3></h3>
+    {% else %}
+
+    <div class="clearfix"></div>
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <!-- End Breadcrumb-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+
+                        <br>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center mb30">
+                            <h1>Planning</h1>
+                        </div>
+                        {% for i in plann %}
+
+                        <td>
+                            <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+                            <a href="{{ path('planning_pdf', {'id': i.id}) }}"  style='font-size:40px ; margin-left: 50px'><i class='fas fa-cloud-download-alt'></i></a>
+                        </td>
+
+                        <div class="card-body">
+
+                            <div class="table-responsive">
+
+                                            <table id="default-datatable" class="table table-bordered dataTable" role="grid" aria-describedby="default-datatable_info">
+
+                                                    <div class="col-sm-4">
+
+                                                        <label> Class :</label>
+                                                        <input value="{{ i.niveau }}">
+                                                        <br>
+
+                                                        <a  style="margin-left: 950px" class="edit" href="{{ path('planning_update2', { 'id': i.id} ) }}"title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                                        <br>
+                                                        <a style="margin-left: 950px" class="delete"href="{{ path('planning_delete2', { 'id': i.id} ) }}" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
+                                                        <br>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="{{ path('upload_new1') }}"> Add Planning </a>
+                                                            </li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="{{ path('upload_show') }}"> List Planning </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <thead>
+                                                    <th scope="col">Time/Day</th>
+                                                    <th scope="col">Monday</th>
+                                                    <th scope="col">Tuesday</th>
+                                                    <th scope="col">Wednesday</th>
+                                                    <th scope="col">Thursday</th>
+                                                    <th scope="col">Friday</th>
+                                                    <th scope="col">Saturday</th>
+                                                    </thead>
+                                                <tbody>
+                                                <!--------08:00 - 10:00-------->
+                                                <tr>
+                                                    <td> 08:00--10:00 </td>
+                                                    <td>{{ i.matiere1 }}</td>
+                                                    <td>{{ i.matiere2 }}</td>
+                                                    <td>{{ i.matiere3 }}</td>
+                                                    <td>{{ i.matiere4 }}</td>
+                                                    <td>{{ i.matiere5 }}</td>
+                                                    <td>{{ i.activite1 }}</td>
+                                                </tr>
+                                                <!-------10:00 - 12:00--------->
+                                                <tr>
+                                                    <td> 10:00--12:00 </td>
+                                                    <td>{{ i.matiere6 }}</td>
+                                                    <td>{{ i.matiere7 }}</td>
+                                                    <td>{{ i.activite2 }}</td>
+                                                    <td>{{ i.matiere8 }}</td>
+                                                    <td>{{ i.matiere9 }}</td>
+                                                    <td>{{ i.activite3 }}</td>
+                                                </tr>
+                                                <!-------12:00 - 14:00--------->
+                                                <tr>
+                                                    <td> 12:00--14:00 </td>
+                                                    <td>pause déjeuner</td>
+                                                    <td>pause déjeuner</td>
+                                                    <td></td>
+                                                    <td>pause déjeuner</td>
+                                                    <td>pause déjeuner</td>
+                                                    <td></td>
+                                                </tr>
+                                                <!-------14:00 - 16:00--------->
+                                                <tr>
+                                                    <td> 14:00--16:00 </td>
+                                                    <td>{{ i.activite4 }}</td>
+                                                    <td>{{ i.activite5 }}</td>
+                                                    <td></td>
+                                                    <td>{{ i.activite6 }}</td>
+                                                    <td>{{ i.activite7 }}</td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                                {% endfor %}
+
+                                            </table></div></div>
+                        <div style="margin-left: 300px" class="col-lg-4">
+                            <ul class="pagination pagination-separate pagination-round">
+                                {{ knp_pagination_render((plann) ) }}
+                            </ul>
+                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endif %}
+
+{% endblock %}

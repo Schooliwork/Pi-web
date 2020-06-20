@@ -1,0 +1,116 @@
+event_homepage:
+    path:     /
+    defaults: { _controller: EventBundle:Default:index }
+
+
+event_create0:
+    path:     /create0
+    defaults: { _controller: EventBundle:Event1:create0 }
+
+event_read0:
+    path:     /read0/{id}
+    defaults: { _controller: EventBundle:Event1:read0 }
+
+event_update0:
+    path:     /update0/{id}
+    defaults: { _controller: EventBundle:Event1:update0 }
+
+event_affiche0:
+    path:     /affiche0/{id}
+    defaults: { _controller: EventBundle:Event1:affiche0}
+
+event_statistique:
+    path:    /statistique
+    defaults: { _controller: EventBundle:Event1:statistique }
+
+event_calendar:
+    path:    /calendar
+    defaults: { _controller: EventBundle:Event1:calendar }
+
+event_create:
+    path:     /create
+    defaults: { _controller: EventBundle:Event:create }
+
+event_read:
+    path:     /read
+    defaults: { _controller: EventBundle:Event:read }
+
+event_update:
+    path:     /update/{id}
+    defaults: { _controller: EventBundle:Event:update }
+
+event_delete:
+    path:     /delete/{id}
+    defaults: { _controller: EventBundle:Event:delete }
+
+event_affiche:
+    path:     /affiche
+    defaults: { _controller: EventBundle:Event:affiche}
+
+commentaire_read1:
+    path:     /read1/{id}
+    defaults: { _controller: EventBundle:Commentaire:read1}
+
+commentaire_affiche1:
+    path:     /affiche1/{id}
+    defaults: { _controller: EventBundle:Commentaire:affiche1}
+
+commentaire_create1:
+    path:     /create1
+    defaults: { _controller: EventBundle:Commentaire:create1}
+
+commentaire_delete1:
+    path:     /delete1/{id}
+    defaults: { _controller: EventBundle:Commentaire:delete1}
+
+commentaire_update1:
+    path:     /update1/{id}
+    defaults: { _controller: EventBundle:Commentaire:update1}
+
+api_alle:
+    path:     /all
+    defaults: { _controller: EventBundle:Api:alle}
+
+api_newss:
+    path:     /newss
+    defaults: { _controller: EventBundle:Api:newss}
+
+api_alls:
+    path:     /alls
+    defaults: { _controller: EventBundle:Api:alls}
+
+api_allss:
+    path:     /allss
+    defaults: { _controller: EventBundle:Api:allss}
+
+api_updateC:
+    path:     /updateC/{id}
+    defaults: { _controller: EventBundle:Api:updateC}
+
+participant_createP:
+    path:     /createP
+    defaults: { _controller: EventBundle:Participant:createP}
+
+participant_readP:
+    path:     /readP/{id}
+    defaults: { _controller: EventBundle:Participant:readP}
+
+api_new:
+    path:     /new
+    defaults: { _controller: EventBundle:Api:new}
+
+api_indexx:
+    path:     /indexx/{id}
+    defaults: { _controller: EventBundle:Api:indexx}
+
+api_indexxx:
+    path:     /indexxx/{id}
+    defaults: { _controller: EventBundle:Api:indexxx}
+
+api_iindexxx:
+    path:     /iindexxx/{id}
+    defaults: { _controller: EventBundle:Api:iindexxx}
+
+api_supp:
+    path:     /supp/{id}
+    defaults: { _controller: EventBundle:Api:supp}

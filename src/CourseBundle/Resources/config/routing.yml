@@ -1,0 +1,23 @@
+course_homepage:
+    path:     /
+    defaults: { _controller: CourseBundle:Default:index }
+
+matiere_new:
+    path:     /new
+    defaults: { _controller: CourseBundle:Matiere:new }
+
+matiere_delete:
+    path:     /delete/{id}
+    defaults: { _controller: CourseBundle:Matiere:delete }
+
+matiere_index:
+    path:     /index
+    defaults: { _controller: CourseBundle:Matiere:index }
+
+matiere_affiche:
+    path:     /affiche
+    defaults: { _controller: CourseBundle:Matiere:affiche}
+
+matiere_all:
+    path:     /all
+    defaults: { _controller: CourseBundle:Api:all }

@@ -1,0 +1,43 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="card-body px-lg-5 py-lg-5">
+    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+
+    {% for el in form %}
+
+        {% if el.vars.name=="_token" %}
+
+            {{ form_widget(el) }}
+
+        {% elseif el.vars.name=="current_password" %}
+
+            <div class="form-group">
+                <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    {{ form_widget(el,{'attr': {'class': 'form-control', 'placeholder': el.vars.label}}) }}
+                </div>
+            </div>
+
+        {% else %}
+
+            <div class="form-group">
+                <div class="input-group input-group-merge input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    {{ form_widget(el,{'attr': {'class': 'form-control', 'placeholder': el.vars.label}}) }}
+                </div>
+            </div>
+
+        {% endif %}
+
+    {% endfor %}
+
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary my-4"
+               value="{{ 'profile.edit.submit'|trans }}"/>
+    </div>
+    {{ form_end(form) }}
+</div>

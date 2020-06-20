@@ -1,0 +1,60 @@
+event:
+    resource: "@EventBundle/Resources/config/routing.yml"
+    prefix:   /Event
+
+planning:
+    resource: "@PlanningBundle/Resources/config/routing.yml"
+    prefix:   /Planning
+
+home_home:
+    resource: "@HomeHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+reclamation:
+    resource: "@ReclamationBundle/Resources/config/routing.yml"
+    prefix:   /Reclamation
+
+course:
+    resource: "@CourseBundle/Resources/config/routing.yml"
+    prefix:   /Course
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+user_user:
+    resource: "@UserUserBundle/Resources/config/routing.xml"
+    prefix:   /user
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+adesigns_calendar:
+    resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
+
+meeting:
+    resource: "@MeetingBundle/Resources/config/routing.yml"
+    prefix:   /Meeting
+
+mail:
+    resource: "@MailBundle/Resources/config/routing.yml"
+    prefix:   /Mail
+
+wall:
+    resource: "@WallBundle/Resources/config/routing.yml"
+    prefix:   /Wall
+
+avis:
+    resource: "@AvisBundle/Controller/"
+    prefix:   /avis
+
+activite:
+    resource: "@ActiviteBundle/Controller/"
+    prefix:   /activitie
+
+lien:
+    resource: "@LienBundle/Controller/"
+    prefix:   /

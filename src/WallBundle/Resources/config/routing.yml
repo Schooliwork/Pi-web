@@ -1,0 +1,39 @@
+wall_homepage:
+    path:     /
+    defaults: { _controller: WallBundle:Default:index }
+
+wall_create:
+    path:     /create
+    defaults: { _controller: WallBundle:Wall:create }
+
+wall_createe:
+    path:     /createe
+    defaults: { _controller: WallBundle:Wall:createe }
+
+wall_read:
+    path:     /read
+    defaults: { _controller: WallBundle:Wall:read }
+
+wall_update:
+    path:     /update/{id}
+    defaults: { _controller: WallBundle:Wall:update }
+
+wall_updatee:
+    path:     /updatee/{id}
+    defaults: { _controller: WallBundle:Wall:updatee }
+
+wall_delete:
+    path:     /delete/{id}
+    defaults: { _controller: WallBundle:Wall:delete }
+
+wall_deletee:
+    path:     /deletee/{id}
+    defaults: { _controller: WallBundle:Wall:deletee }
+
+wall_affiche:
+    path:     /affiche
+    defaults: { _controller: WallBundle:Wall:affiche}
+
+wall_all:
+    path:     /all
+    defaults: { _controller: WallBundle:Api:all}

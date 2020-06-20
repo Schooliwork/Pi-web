@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Schooli</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="{{ asset ('https://fonts.googleapis.com/css?family=DM+Sans:300,400,700|Indie+Flower')}}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ asset ('fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{ asset ('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{ asset ('css/jquery.fancybox.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{ asset ('fonts/flaticon/font/flaticon.css')}}">
+    <link rel="stylesheet" href="{{ asset ('css/aos.css')}}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{{ asset ('css/style.css')}}">
+
+</head>
+<!---------------------------------------->
+<br>
+{% block container %}
+
+<p><a style="margin-left: 20px" href="{{ path ('activite_display' )}}" class="btn btn-dark">BACK</a></p>
+
+<div style="background-color: peachpuff" class="container">
+    <br>
+
+    <div style="margin-left: 400px"><h1>Avis creation</h1></div>
+
+    <br>
+    <div style="margin-left: 300px" class="container">
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <br>
+        <a> <input style="margin-left: 100px" class="btn btn-success" type="submit" value="Save" /> </a>
+        {{ form_end(form) }}
+        <br>
+
+    </div>
+</div>
+
+{% endblock %}
+</html>

@@ -1,0 +1,28 @@
+meeting_homepage:
+    path:     /
+    defaults: { _controller: MeetingBundle:Default:index }
+
+meeting_read:
+    path:     /read
+    defaults: { _controller: MeetingBundle:Meeting:read }
+
+meeting_create:
+    path:     /create
+    defaults: { _controller: MeetingBundle:Meeting:create }
+
+meeting_delete:
+    path:     /delete/{id}
+    defaults: { _controller: MeetingBundle:Meeting:delete }
+
+meeting_update:
+    path:     /update/{id}
+    defaults: { _controller: MeetingBundle:Meeting:update }
+
+
+meeting_affiche:
+    path:     /affiche
+    defaults: { _controller: MeetingBundle:Meeting:affiche }
+
+meeting_all:
+    path:     /all
+    defaults: { _controller: MeetingBundle:Api:all }
